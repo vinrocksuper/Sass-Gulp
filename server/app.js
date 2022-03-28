@@ -3,7 +3,6 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const favicon = require('serve-favicon');
-const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressHandlebars = require('express-handlebars');
 
@@ -19,13 +18,12 @@ app.use(compression());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
-app.engine('handlebars', expressHandlebars({
+app.engine('handlebars', expressHandlebars.engine({
   defaultLayout: '',
 }));
 app.set('view engine', 'handlebars');
 app.set('views', `${__dirname}/../views`);
 app.disable('x-powered-by');
-app.use(cookieParser());
 
 router(app);
 
