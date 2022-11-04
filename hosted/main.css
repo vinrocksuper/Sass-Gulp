@@ -1,15 +1,7 @@
-@use 'sass:math';
-@use 'reset';
-
-
-$constrastColor: red;
-$appWidth: 400px;
-
-@function calcDivMargin($width) {
-  @return math.div($width, 4);
+body {
+  background-color: red;
+  color: magenta;
 }
-
-:root {}
 
 html,
 body {
@@ -26,15 +18,15 @@ body {
 }
 
 #app div {
-  margin-top: calcDivMargin($appWidth);
+  margin-top: 100px;
 }
 
 #app div h1 {
-  color: $constrastColor;
+  color: red;
 }
 
 #app div ul {
-  width: $appWidth;
+  width: 400px;
   margin: 0 auto;
   text-align: left;
 }
